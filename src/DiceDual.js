@@ -12,14 +12,13 @@ const DiceDual = () => {
   const [highlightStates, setHighlightStates] = useState([]);
 
   const diceImages = [
-    process.env.PUBLIC_URL + "/assets/DieFace1.jpg",
-    process.env.PUBLIC_URL + "/assets/DieFace2.jpg",
-    process.env.PUBLIC_URL + "/assets/DieFace3.jpg",
-    process.env.PUBLIC_URL + "/assets/DieFace4.jpg",
-    process.env.PUBLIC_URL + "/assets/DieFace5.jpg",
-    process.env.PUBLIC_URL + "/assets/DieFace6.jpg",
-  ];
-
+  "/DieFace1.jpg",
+  "/DieFace2.jpg",
+  "/DieFace3.jpg",
+  "/DieFace4.jpg",
+  "/DieFace5.jpg",
+  "/DieFace6.jpg",
+];
   const rollDiceForOptions = (opts) => opts.map(() => Math.floor(Math.random() * 6) + 1);
 
   const rollDice = () => {

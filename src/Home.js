@@ -5,7 +5,7 @@ function Home() {
   const navigate = useNavigate();
 
   const spinImage = process.env.PUBLIC_URL + "/Spinwheel.png";
-  const diceImage = process.env.PUBLIC_URL + "/assets/DieFace5.jpg";
+  const diceImage = process.env.PUBLIC_URL + "/DieFace5.jpg";
   const coinFlipImage = process.env.PUBLIC_URL + "/QuarterImage.jpg";
 
   const goToRandomGame = () => {
