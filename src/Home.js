@@ -18,7 +18,7 @@ function Home() {
   return (
     <div
       style={{
-        backgroundColor: "black",
+        backgroundColor: "white",
         minHeight: "100vh",
         color: "white",
         padding: 20,
@@ -39,6 +39,7 @@ function Home() {
         }}
       >
         <h1 style={{ margin: 0, fontFamily: "Chewy" }}>Decision It</h1>
+        
         <button
           onClick={() => navigate("/")}
           style={{
@@ -57,7 +58,7 @@ function Home() {
         </button>
       </div>
       {/* Centered Welcome Message */}
-      <div style={{ textAlign: "center", marginBottom: 10 }}>
+      <div style={{ textAlign: "center", marginBottom: 10 , color: "black"}}>
         <h1 style={{ fontSize: 42 }}>🎲 Welcome to Decision It 🎲</h1>
         <p style={{ fontSize: 20 }}>Making decision making easy and fun!</p>
       </div>
@@ -70,6 +71,7 @@ function Home() {
           alignItems: "center",
           gap: 12,
           marginBottom: 20,
+          color: "black"
         }}
       >
         <span style={{ fontSize: 18 }}>Can't decide?</span>
@@ -94,14 +96,17 @@ function Home() {
 
       {/* Games Grid */}
       <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
-          gap: 30,
-          maxWidth: 960,
-          margin: "0 auto",
-        }}
-      >
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
+    gap: 20,
+    maxWidth: "1200px",
+    margin: "0 auto",
+    padding: 20,
+  }}
+>
+
+      
         {/* Spin the Wheel Card */}
         <div
           onClick={() => navigate("/spinner")}
