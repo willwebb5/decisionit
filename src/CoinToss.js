@@ -19,7 +19,7 @@ function CoinToss() {
         color: "white",
         minHeight: "100vh",
         padding: 20,
-        fontFamily: "cursive",
+        fontFamily: "Georgia, serif",
       }}
     >
       {/* Header */}
