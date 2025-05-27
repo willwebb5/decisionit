@@ -35,7 +35,7 @@ function CoinToss() {
           marginBottom: 20,
         }}
       >
-        <h1 style={{ margin: 0, fontFamily: "cursive" }}>🎲 Decision It</h1>
+        <h1 style={{ margin: 0, fontFamily: "chewy" }}>🎲 Decision It</h1>
 
         <button
           onClick={() => navigate("/")}
@@ -44,7 +44,7 @@ function CoinToss() {
             border: "none",
             color: "white",
             fontWeight: "bold",
-            fontFamily: "cursive",
+            fontFamily: "chewy",
             padding: "10px 20px",
             borderRadius: 10,
             fontSize: 18,

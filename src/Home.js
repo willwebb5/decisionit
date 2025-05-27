@@ -22,7 +22,7 @@ function Home() {
         color: "white",
         padding: 20,
         position: "relative",
-        fontFamily: "cursive",
+        fontFamily: "Chewy",
       }}
     >
       {/* Centered Welcome Message */}
@@ -53,7 +53,7 @@ function Home() {
             borderRadius: 10,
             cursor: "pointer",
             fontSize: 16,
-            fontFamily: "cursive",
+            fontFamily: "Sans seriff",
             boxShadow: "0 0 10px #ffcc0066",
           }}
         >
@@ -83,6 +83,7 @@ function Home() {
             textAlign: "center",
             color: "white",
             userSelect: "none",
+            fontFamily: "monospace"
           }}
         >
           <h3 style={{ marginBottom: 10 }}>🎡 Spin the Wheel</h3>
@@ -111,6 +112,7 @@ function Home() {
             textAlign: "center",
             color: "white",
             userSelect: "none",
+            fontFamily: "monospace"
           }}
         >
           <h3 style={{ marginBottom: 10 }}>🎲 Dice Duel</h3>
@@ -139,6 +141,7 @@ function Home() {
             textAlign: "center",
             color: "white",
             userSelect: "none",
+            fontFamily: "monospace"
           }}
         >
           <h3 style={{ marginBottom: 10 }}>🪙 Coin Toss</h3>

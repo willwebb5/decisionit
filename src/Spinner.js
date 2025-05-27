@@ -59,7 +59,7 @@ function Spinner() {
           marginBottom: 20,
         }}
       >
-        <h1 style={{ margin: 0, fontFamily: "cursive" }}>🎲 Decision It</h1>
+        <h1 style={{ margin: 0, fontFamily: "Chewy" }}>🎲 Decision It</h1>
 
         <button
           onClick={() => navigate("/")}
@@ -68,7 +68,7 @@ function Spinner() {
             border: "none",
             color: "white",
             fontWeight: "bold",
-            fontFamily: "cursive",
+            fontFamily: "Chewy",
             padding: "10px 20px",
             borderRadius: 10,
             fontSize: 18,
