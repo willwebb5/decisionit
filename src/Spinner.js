@@ -59,7 +59,7 @@ function Spinner() {
           marginBottom: 20,
         }}
       >
-        <h1 style={{ margin: 0, fontFamily: "Chewy" }}>🎲 Decision It</h1>
+        <h1 style={{ margin: 0, fontFamily: "Chewy" }}>Decision It</h1>
 
         <button
           onClick={() => navigate("/")}

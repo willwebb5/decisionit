@@ -98,7 +98,7 @@ const DiceDual = () => {
           marginBottom: 20,
         }}
       >
-        <h1 style={{ margin: 0, fontFamily: "chewy" }}>🎲 Decision It</h1>
+        <h1 style={{ margin: 0, fontFamily: "chewy" }}>Decision It</h1>
         <button
           onClick={() => navigate("/")}
           style={{

@@ -7,9 +7,10 @@ function Home() {
   const spinImage = process.env.PUBLIC_URL + "/Spinwheel.png";
   const diceImage = process.env.PUBLIC_URL + "/DieFace5.jpg";
   const coinFlipImage = process.env.PUBLIC_URL + "/QuarterImage.jpg";
+  const horseraceimage = process.env.PUBLIC_URL + "/RaceHorse.jpg";
 
   const goToRandomGame = () => {
-    const games = ["/spinner", "/dicedual", "/cointoss"]; // ✅ corrected from /coinflip
+    const games = ["/spinner", "/dicedual", "/cointoss", "/horserace"]; 
     const randomPath = games[Math.floor(Math.random() * games.length)];
     navigate(randomPath);
   };
@@ -25,8 +26,38 @@ function Home() {
         fontFamily: "Chewy",
       }}
     >
+      {/* Title Bar */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          backgroundColor: "#7a99d9",
+          padding: "12px 20px",
+          borderRadius: 8,
+          marginBottom: 10,
+        }}
+      >
+        <h1 style={{ margin: 0, fontFamily: "Chewy" }}>Decision It</h1>
+        <button
+          onClick={() => navigate("/")}
+          style={{
+            backgroundColor: "#7a99d9",
+            border: "none",
+            color: "white",
+            fontWeight: "bold",
+            fontFamily: "Chewy",
+            padding: "10px 20px",
+            borderRadius: 10,
+            fontSize: 18,
+            cursor: "pointer",
+          }}
+        >
+          Home
+        </button>
+      </div>
       {/* Centered Welcome Message */}
-      <div style={{ textAlign: "center", marginBottom: 30 }}>
+      <div style={{ textAlign: "center", marginBottom: 10 }}>
         <h1 style={{ fontSize: 42 }}>🎲 Welcome to Decision It 🎲</h1>
         <p style={{ fontSize: 20 }}>Making decision making easy and fun!</p>
       </div>
@@ -38,7 +69,7 @@ function Home() {
           justifyContent: "center",
           alignItems: "center",
           gap: 12,
-          marginBottom: 40,
+          marginBottom: 20,
         }}
       >
         <span style={{ fontSize: 18 }}>Can't decide?</span>
@@ -157,6 +188,35 @@ function Home() {
             }}
           />
         </div>
+
+        <div
+  onClick={() => navigate("/horserace")}
+  style={{
+    cursor: "pointer",
+    backgroundColor: "#1a1a1a",
+    borderRadius: 12,
+    padding: 16,
+    boxShadow: "0 0 10px #007acc66",
+    textAlign: "center",
+    color: "white",
+    userSelect: "none",
+    fontFamily: "monospace"
+  }}
+>
+  <h3 style={{ marginBottom: 10 }}>🐎 Horse Race</h3>
+  <img
+    src={horseraceimage} // Add a fun horse image in public/
+    alt="Horse Race"
+    style={{
+      width: "100%",
+      aspectRatio: "1 / 1",
+      height: "auto",
+      borderRadius: 8,
+      boxShadow: "0 0 8px #007acc44",
+    }}
+  />
+</div>
+
       </div>
     </div>
   );
