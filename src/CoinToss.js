@@ -15,7 +15,7 @@ function CoinToss() {
   return (
     <div
       style={{
-        backgroundColor: "black",
+        backgroundColor: "white",
         color: "white",
         minHeight: "100vh",
         padding: 20,
@@ -70,8 +70,8 @@ function CoinToss() {
         Coin Toss
       </h2>
       {/* Input and Flip Section */}
-      <div style={{ maxWidth: 500, margin: "0 auto", textAlign: "center" }}>
-        <p>Enter what each side of the coin means:</p>
+      <div style={{ maxWidth: 500, margin: "0 auto", textAlign: "center" ,color:"black"}}>
+        <p>Enter option for each coin side:</p>
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <input
             type="text"

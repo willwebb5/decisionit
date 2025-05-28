@@ -81,7 +81,7 @@ const DiceDual = () => {
     <div
       style={{
         padding: 20,
-        backgroundColor: "black",
+        backgroundColor: "white",
         minHeight: "100vh",
         color: "white",
         position: "relative",

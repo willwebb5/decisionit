@@ -41,7 +41,7 @@ function Spinner() {
     <div
       style={{
         padding: 20,
-        backgroundColor: "black",
+        backgroundColor: "white",
         minHeight: "100vh",
         color: "white",
         position: "relative",
@@ -126,7 +126,7 @@ function Spinner() {
         </div>
 
         {/* Input Boxes with delete '×' */}
-        <div style={{ maxWidth: 400, flex: "1 1 400px" }}>
+        <div style={{ maxWidth: 400, flex: "1 1 400px" ,color:"black"}}>
           <p>Enter your decision options:</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {inputs.map((opt, i) => (

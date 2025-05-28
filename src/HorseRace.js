@@ -14,10 +14,10 @@ function RunnerRace() {
   const navigate = useNavigate();
 
   const speedOptions = {
-    slow: { label: "Slow (~1 min)", targetTimeMs: 60000, interval: 200 },
-    medium: { label: "Medium (~20 sec)", targetTimeMs: 20000, interval: 100 },
-    fast: { label: "Fast (~10 sec)", targetTimeMs: 10000, interval: 50 },
-    extraFast: { label: "Extra Fast (~5 sec)", targetTimeMs: 5000, interval: 30 },
+    slow: { label: "Slow", targetTimeMs: 60000, interval: 200 },
+    medium: { label: "Medium", targetTimeMs: 20000, interval: 100 },
+    fast: { label: "Fast", targetTimeMs: 10000, interval: 50 },
+    extraFast: { label: "Extra Fast", targetTimeMs: 5000, interval: 30 },
   };
 
   const [speed, setSpeed] = useState("medium");
@@ -155,7 +155,7 @@ function RunnerRace() {
     <div
       style={{
         padding: 20,
-        backgroundColor: "black",
+        backgroundColor: "white",
         minHeight: "100vh",
         color: "white",
         position: "relative",
