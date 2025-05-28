@@ -204,7 +204,7 @@ function RunnerRace() {
           marginRight: "auto",
         }}
       >
-        🏁 Horse Race
+        Horse Race
       </h2>
 
       <div

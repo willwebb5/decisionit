@@ -259,7 +259,7 @@ const DiceDual = () => {
           + Add Option
         </button>
       </div>
-
+      
       {/* --- HOW TO PLAY BOX --- */}
       <div
         style={{
@@ -273,6 +273,7 @@ const DiceDual = () => {
           marginRight: "auto",
           fontSize: 16,
           lineHeight: 1.5,
+          textAlign:"center"
         }}
       >
         <h3 style={{ color: "#7a99d9", marginBottom: 10 }}>How to Play</h3>
