@@ -32,7 +32,7 @@ function Home() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          backgroundColor: "#7a99d9",
+          backgroundColor: "black",
           padding: "12px 20px",
           borderRadius: 8,
           marginBottom: 10,
@@ -43,7 +43,7 @@ function Home() {
         <button
           onClick={() => navigate("/")}
           style={{
-            backgroundColor: "#7a99d9",
+            backgroundColor: "black",
             border: "none",
             color: "white",
             fontWeight: "bold",

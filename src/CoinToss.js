@@ -29,10 +29,10 @@ function CoinToss() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          backgroundColor: "#7a99d9",
+          backgroundColor: "black",
           padding: "12px 20px",
           borderRadius: 8,
-          marginBottom: 20,
+          marginBottom: 10,
         }}
       >
         <h1 style={{ margin: 0, fontFamily: "chewy" }}>Decision It</h1>
@@ -40,7 +40,7 @@ function CoinToss() {
         <button
           onClick={() => navigate("/")}
           style={{
-            backgroundColor: "#7a99d9",
+            backgroundColor: "black",
             border: "none",
             color: "white",
             fontWeight: "bold",
@@ -56,7 +56,7 @@ function CoinToss() {
       </div>
       <h2
         style={{
-          backgroundColor: "#7a99d9",
+          backgroundColor: "black",
           padding: "10px 20px",
           borderRadius: 8,
           maxWidth: 720,
