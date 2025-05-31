@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 function CoinToss() {
   const [headsOption, setHeadsOption] = useState("");
   const [tailsOption, setTailsOption] = useState("");
@@ -22,8 +23,6 @@ function CoinToss() {
         fontFamily: "Georgia, serif",
       }}
     >
-      {/* Header */}
-      {/* Title Bar */}
       <div
         style={{
           display: "flex",
@@ -32,11 +31,10 @@ function CoinToss() {
           backgroundColor: "black",
           padding: "12px 20px",
           borderRadius: 8,
-          marginBottom: 10,
+          marginBottom: 20,
         }}
       >
         <h1 style={{ margin: 0, fontFamily: "chewy" }}>Decision It</h1>
-
         <button
           onClick={() => navigate("/")}
           style={{

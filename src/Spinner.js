@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Wheel } from "react-custom-roulette";
 import { useNavigate } from "react-router-dom";
 
+
 function Spinner() {
   const [inputs, setInputs] = useState(["", "", ""]);
   const [mustSpin, setMustSpin] = useState(false);
@@ -38,7 +39,8 @@ function Spinner() {
   };
 
   return (
-    <div
+    /* BAckgorund and general page settings */
+    <div 
       style={{
         padding: 20,
         backgroundColor: "white",
@@ -71,7 +73,7 @@ function Spinner() {
             fontFamily: "Chewy",
             padding: "10px 20px",
             borderRadius: 10,
-            fontSize: 18,
+            fontSize: 20,
             cursor: "pointer",
           }}
         >

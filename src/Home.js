@@ -8,9 +8,10 @@ function Home() {
   const diceImage = process.env.PUBLIC_URL + "/DieFace5.jpg";
   const coinFlipImage = process.env.PUBLIC_URL + "/QuarterImage.jpg";
   const horseraceimage = process.env.PUBLIC_URL + "/RaceHorse.jpg";
+  const plinkoimage = process.env.PUBLIC_URL + "/plinko.jpg";
 
   const goToRandomGame = () => {
-    const games = ["/spinner", "/dicedual", "/cointoss", "/horserace"]; 
+    const games = ["/spinner", "/dicedual", "/cointoss", "/horserace","/plinko"]; 
     const randomPath = games[Math.floor(Math.random() * games.length)];
     navigate(randomPath);
   };
@@ -219,9 +220,37 @@ function Home() {
       borderRadius: 8,
       boxShadow: "0 0 8px #007acc44",
     }}
+    
   />
 </div>
-
+{/* Plinko Game Card */}
+<div
+  onClick={() => navigate("/plinko")}
+  style={{
+    cursor: "pointer",
+    backgroundColor: "#1a1a1a",
+    borderRadius: 12,
+    padding: 16,
+    boxShadow: "0 0 10px #007acc66",
+    textAlign: "center",
+    color: "white",
+    userSelect: "none",
+    fontFamily: "monospace",
+  }}
+>
+  <h3 style={{ marginBottom: 10 }}>🔴 Plinko</h3>
+  <img
+    src={process.env.PUBLIC_URL + "/PlinkoImage.png"} // Add an image named PlinkoImage.png to your public folder
+    alt="Plinko Game"
+    style={{
+      width: "100%",
+      aspectRatio: "1 / 1",
+      height: "auto",
+      borderRadius: 8,
+      boxShadow: "0 0 8px #007acc44",
+    }}
+  />
+</div>
       </div>
     </div>
   );
