@@ -5,7 +5,7 @@ export default function Plinko() {
   const navigate = useNavigate();
 
   const [options, setOptions] = useState(["Option A", "Option B", "Option C", "Option D"]);
-  const [startCol, setStartCol] = useState("");
+  const [startCol, setStartCol] = useState(Math.ceil(options.length / 2).toString());
   const [ballPath, setBallPath] = useState([]);
   const [currentStep, setCurrentStep] = useState(0);
   const [isDropping, setIsDropping] = useState(false);
@@ -25,6 +25,10 @@ export default function Plinko() {
       setWinner(options[finalCol]);
     }
   }, [isDropping, currentStep, ballPath, options]);
+
+  useEffect(() => {
+  setStartCol(Math.ceil(options.length / 2).toString());
+}, [options.length]);
 
   const handleDrop = () => {
     setError("");

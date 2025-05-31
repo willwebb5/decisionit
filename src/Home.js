@@ -8,14 +8,13 @@ function Home() {
   const diceImage = process.env.PUBLIC_URL + "/DieFace5.jpg";
   const coinFlipImage = process.env.PUBLIC_URL + "/QuarterImage.jpg";
   const horseraceimage = process.env.PUBLIC_URL + "/RaceHorse.jpg";
-  const plinkoimage = process.env.PUBLIC_URL + "/plinko.jpg";
+  const plinkoimage = process.env.PUBLIC_URL + "/PlinkoImage.png";
 
   const goToRandomGame = () => {
     const games = ["/spinner", "/dicedual", "/cointoss", "/horserace","/plinko"]; 
     const randomPath = games[Math.floor(Math.random() * games.length)];
     navigate(randomPath);
   };
-
   return (
     <div
       style={{
