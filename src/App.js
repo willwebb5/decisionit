@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
-import Spinner from './Spinner';
+import SpinTheWheel from './SpinTheWheel';
 import DiceDual from './DiceDual'; // ✅ Import DiceDual
 import CoinToss from './CoinToss';  // Import your coin flip component
 import HorseRace from './HorseRace';
@@ -14,7 +14,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/spinner" element={<Spinner />} />
+        <Route path="/SpinTheWheel" element={<SpinTheWheel />} />
         <Route path="/dicedual" element={<DiceDual />} />
         <Route path="/cointoss" element={<CoinToss />} /> 
         <Route path="/HorseRace" element={<HorseRace />} /> 

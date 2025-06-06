@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import confetti from "canvas-confetti";
+import { Helmet } from "react-helmet";
 
 export default function Plinko() {
   const navigate = useNavigate();
-
   const [options, setOptions] = useState(["Option A", "Option B", "Option C", "Option D"]);
   const [startCol, setStartCol] = useState(Math.ceil(options.length / 2).toString());
   const [ballPath, setBallPath] = useState([]);
@@ -11,6 +12,7 @@ export default function Plinko() {
   const [isDropping, setIsDropping] = useState(false);
   const [winner, setWinner] = useState(null);
   const [error, setError] = useState("");
+  const [showWinnerBox, setShowWinnerBox] = useState(false);
 
   const COLS = options.length;
   const ROWS = 8;
@@ -22,17 +24,26 @@ export default function Plinko() {
     } else if (isDropping && currentStep >= ballPath.length) {
       setIsDropping(false);
       const finalCol = ballPath[ballPath.length - 1];
-      setWinner(options[finalCol]);
+      const winningOption = options[finalCol];
+      setWinner(winningOption);
+      setShowWinnerBox(true);
+
+      // 🎉 Launch confetti
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+      });
     }
   }, [isDropping, currentStep, ballPath, options]);
 
   useEffect(() => {
-  setStartCol(Math.ceil(options.length / 2).toString());
-}, [options.length]);
+    setStartCol(Math.ceil(options.length / 2).toString());
+  }, [options.length]);
 
-  const handleDrop = () => {
+  const handleDrop = (colParam) => {
     setError("");
-    const colNum = parseInt(startCol);
+    const colNum = colParam !== undefined ? colParam : parseInt(startCol);
     if (isNaN(colNum) || colNum < 1 || colNum > COLS) {
       setError(`Enter a column between 1 and ${COLS}`);
       return;
@@ -40,6 +51,7 @@ export default function Plinko() {
     if (isDropping) return;
 
     setWinner(null);
+    setShowWinnerBox(false);
     setCurrentStep(0);
     setIsDropping(true);
 
@@ -51,6 +63,13 @@ export default function Plinko() {
       currentCol = Math.max(0, Math.min(COLS - 1, currentCol + move));
     }
     setBallPath(path);
+  };
+
+  const handleRandomDrop = () => {
+    if (isDropping) return;
+    const randomCol = Math.floor(Math.random() * COLS) + 1; // 1-based
+    setStartCol(randomCol.toString());
+    handleDrop(randomCol);
   };
 
   const updateOption = (index, value) => {
@@ -72,6 +91,24 @@ export default function Plinko() {
     }
   };
 
+  // Close winner modal
+  const closeWinnerBox = () => {
+    setShowWinnerBox(false);
+    setWinner(null);
+  };
+
+  // Remove winner and close modal
+  const removeWinner = () => {
+    if (!winner) return;
+    const idx = options.indexOf(winner);
+    if (idx === -1) return;
+    const newOptions = options.filter((_, i) => i !== idx);
+    setOptions(newOptions);
+    setShowWinnerBox(false);
+    setWinner(null);
+    setStartCol(Math.ceil(newOptions.length / 2).toString());
+  };
+
   return (
     <div style={{ backgroundColor: "#fff", minHeight: "100vh", padding: 20 }}>
       {/* Header */}
@@ -87,6 +124,20 @@ export default function Plinko() {
           alignItems: "center",
         }}
       >
+        {/* React Helmet for SEO */}
+      <Helmet>
+        <meta
+          name="Plinko to Decide"
+          content="Play plinko to decide which option to choose. Input your options and the plinko game will decide for you!"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Spin the Wheel - Decision It" />
+        <meta
+          property="og:description"
+          content="Use Spin the Wheel to decide between options with a fun and interactive spinner."
+        />
+      </Helmet>
+      
         <h1 style={{ margin: 0, fontFamily: "chewy" }}>Decision It</h1>
         <button
           onClick={() => navigate("/")}
@@ -117,7 +168,7 @@ export default function Plinko() {
           fontFamily: "Georgia, serif",
         }}
       >
-        Plinko - Beta
+        Plinko To Decide
       </h2>
 
       <div style={{ display: "flex", maxWidth: 1500, margin: "0 auto", gap: 40 }}>
@@ -155,93 +206,183 @@ export default function Plinko() {
             >
               Drop Ball
             </button>
+            <button
+              onClick={handleRandomDrop}
+              disabled={isDropping}
+              style={{
+                marginLeft: 10,
+                padding: "8px 16px",
+                backgroundColor: "#ffc107",
+                color: "black",
+                border: "none",
+                borderRadius: 6,
+                cursor: "pointer",
+              }}
+            >
+              Random Drop
+            </button>
             {error && <div style={{ color: "red", marginTop: 10 }}>{error}</div>}
           </div>
 
           {/* Board */}
-<div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
-  {[...Array(ROWS)].map((_, row) => (
-    <div
-      key={row}
-      style={{
-        display: "grid",
-        gridTemplateColumns: `repeat(${COLS}, 50px)`,
-        gap: "20px",
-        justifyContent: "center",
-      }}
-    >
-      {[...Array(COLS)].map((_, col) => {
-        const showBall = currentStep === row && ballPath[currentStep] === col;
-        return (
-          <div
-            key={`${row}-${col}`}
-            style={{
-              width: 30,
-              height: 30,
-              borderRadius: "50%",
-              backgroundColor: showBall ? "#e63946" : "#ddd",
-              transition: "background-color 0.2s",
-              margin: "0 auto",
-            }}
-          />
-        );
-      })}
-    </div>
-  ))}
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
+            {[...Array(ROWS)].map((_, row) => (
+              <div
+                key={row}
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: `repeat(${COLS}, 50px)`,
+                  gap: "20px",
+                  justifyContent: "center",
+                }}
+              >
+                {[...Array(COLS)].map((_, col) => {
+                  const showBall = currentStep === row && ballPath[currentStep] === col;
+                  return (
+                    <div
+                      key={`${row}-${col}`}
+                      style={{
+                        width: 30,
+                        height: 30,
+                        borderRadius: "50%",
+                        backgroundColor: showBall ? "#e63946" : "#ddd",
+                        transition: "background-color 0.2s",
+                        margin: "0 auto",
+                      }}
+                    />
+                  );
+                })}
+              </div>
+            ))}
 
-  {/* Buckets aligned under columns */}
-  <div
-    style={{
-      display: "grid",
-      gridTemplateColumns: `repeat(${COLS}, 50px)`,
-      gap: "20px",
-      justifyContent: "center",
-      marginTop: 20,
-    }}
-  >
-    {options.map((opt, i) => {
-      const isWinner = ballPath[currentStep] === i && currentStep === ROWS;
-      return (
-        <div
-          key={`bucket-${i}`}
-          style={{
-            width: 60,
-            height: 50,
-            backgroundColor: isWinner ? "#2a9d8f" : "#333",
-            color: "white",
-            borderRadius: 6,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            fontWeight: "bold",
-            fontSize: 12,
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-            whiteSpace: "nowrap",
-            gridColumn: "auto",
-          }}
-          title={opt}
-        >
-          {opt}
-        </div>
-      );
-    })}
-  </div>
-</div>
-
-
-          {/* Winner Message */}
-          {winner && (
+            {/* Buckets aligned under columns */}
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: `repeat(${COLS}, 50px)`,
+                gap: "20px",
+                justifyContent: "center",
+                marginTop: 20,
+              }}
+            >
+              {options.map((opt, i) => {
+                const isWinner = ballPath[currentStep] === i && currentStep === ROWS;
+                return (
+                  <div
+                    key={`bucket-${i}`}
+                    style={{
+                      width: 60,
+                      height: 50,
+                      backgroundColor: isWinner ? "#2a9d8f" : "#333",
+                      color: "white",
+                      borderRadius: 6,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      fontWeight: "bold",
+                      fontSize: 12,
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                      whiteSpace: "nowrap",
+                      gridColumn: "auto",
+                    }}
+                    title={opt}
+                  >
+                    {opt}
+                  </div>
+                );
+              })}
+            </div>
+            {/* How to Play Box */}
             <div
               style={{
                 marginTop: 30,
-                fontSize: 24,
-                color: "#2a9d8f",
-                textAlign: "center",
-                fontWeight: "bold",
+                padding: 20,
+                backgroundColor: "#222",
+                borderRadius: 10,
+                color: "White",
+                maxWidth: 600,
+                marginLeft: "auto",
+                marginRight: "auto",
+                fontSize: 16,
+                lineHeight: 1.5,
+                textAlign:"center"
               }}
             >
-              🎉 Winner: {winner}
+              <h3 style={{ marginTop: 0, marginBottom: 10, color:"#7a99d9" }}>How to Play</h3>
+              <p>
+                Enter the column number where you want the ball to drop (between 1 and {options.length}).<br />
+                Click "Drop Ball" to start the ball dropping through the Plinko board.<br />
+                You can also click "Random Drop" to drop the ball from a random column.<br />
+                Watch the ball bounce through the pegs until it lands in a bucket.<br />
+                The bucket where the ball lands shows the winning option!<br />
+                You can add, edit, or remove options on the right side.<br />
+                Use Plinko to decide between options or to select names!
+              </p>
+            </div>
+
+          </div>
+          {/* Winner Modal Box */}
+          {showWinnerBox && (
+            <div
+              style={{
+                position: "fixed",
+                top: 0,
+                left: 0,
+                width: "100vw",
+                height: "100vh",
+                backgroundColor: "rgba(0,0,0,0.5)",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                zIndex: 9999,
+              }}
+            >
+              <div
+                style={{
+                  backgroundColor: "white",
+                  padding: 30,
+                  borderRadius: 12,
+                  minWidth: 300,
+                  maxWidth: "80vw",
+                  textAlign: "center",
+                  boxShadow: "0 0 10px rgba(0,0,0,0.25)",
+                }}
+              >
+                <h2 style={{ marginBottom: 20 }}>🎉 Winner: {winner}</h2>
+                <div style={{ display: "flex", justifyContent: "center", gap: 20 }}>
+                  <button
+                    onClick={closeWinnerBox}
+                    style={{
+                      padding: "10px 20px",
+                      backgroundColor: "#2a9d8f",
+                      color: "white",
+                      border: "none",
+                      borderRadius: 8,
+                      cursor: "pointer",
+                      fontWeight: "bold",
+                      fontSize: 16,
+                    }}
+                  >
+                    Close
+                  </button>
+                  <button
+                    onClick={removeWinner}
+                    style={{
+                      padding: "10px 20px",
+                      backgroundColor: "#dc3545",
+                      color: "white",
+                      border: "none",
+                      borderRadius: 8,
+                      cursor: "pointer",
+                      fontWeight: "bold",
+                      fontSize: 16,
+                    }}
+                  >
+                    Remove
+                  </button>
+                </div>
+              </div>
             </div>
           )}
         </div>

@@ -11,7 +11,7 @@ function Home() {
   const plinkoimage = process.env.PUBLIC_URL + "/PlinkoImage.png";
 
   const goToRandomGame = () => {
-    const games = ["/spinner", "/dicedual", "/cointoss", "/horserace","/plinko"]; 
+    const games = ["/spinTheWheel", "/dicedual", "/cointoss", "/horserace","/plinko"]; 
     const randomPath = games[Math.floor(Math.random() * games.length)];
     navigate(randomPath);
   };
@@ -109,7 +109,7 @@ function Home() {
       
         {/* Spin the Wheel Card */}
         <div
-          onClick={() => navigate("/spinner")}
+          onClick={() => navigate("/SpinTheWheel")}
           style={{
             cursor: "pointer",
             backgroundColor: "#1a1a1a",

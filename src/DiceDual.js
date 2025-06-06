@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { Helmet } from "react-helmet";
 
 const DiceDual = () => {
   const navigate = useNavigate();
@@ -88,6 +88,19 @@ const DiceDual = () => {
         position: "relative",
       }}
     >
+      {/* React Helmet for SEO */}
+      <Helmet>
+        <meta
+          name="Dice Dual"
+          content="Dice Dual to decide between options or to select names! This fun game helps people decide between options by rolling dice! The highest roll wins!"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Spin the Wheel - Decision It" />
+        <meta
+          property="og:description"
+          content="Use Spin the Wheel to decide between options with a fun and interactive spinner."
+        />
+      </Helmet>
       <div
         style={{
           display: "flex",

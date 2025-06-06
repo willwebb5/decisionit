@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { Helmet } from "react-helmet";
 
 function RunnerRace() {
   const [runners, setRunners] = useState(["Runner 1", "Runner 2", "Runner 3"]);
@@ -162,6 +162,19 @@ function RunnerRace() {
         position: "relative",
       }}
     >
+      {/* React Helmet for SEO */}
+            <Helmet>
+              <meta
+                name="Horse Race to Decide"
+                content="This horse race helps you decide between options! Input your options and watch the horses decide for you."
+              />
+              <meta name="robots" content="index, follow" />
+              <meta property="og:title" content="Spin the Wheel - Decision It" />
+              <meta
+                property="og:description"
+                content="Use Spin the Wheel to decide between options with a fun and interactive spinner."
+              />
+            </Helmet>
       {/* Title Bar */}
       <div
         style={{

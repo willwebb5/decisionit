@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { Helmet } from "react-helmet";
 
 function CoinToss() {
   const [headsOption, setHeadsOption] = useState("");
@@ -23,6 +23,19 @@ function CoinToss() {
         fontFamily: "Georgia, serif",
       }}
     >
+      {/* React Helmet for SEO */}
+      <Helmet>
+        <meta
+          name="Coin Toss to Decide"
+          content="Can't decide between two options? Flip a coin and its out of your hands! This coin toss will help you decide quickly and for fun!"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Spin the Wheel - Decision It" />
+        <meta
+          property="og:description"
+          content="Use Spin the Wheel to decide between options with a fun and interactive spinner."
+        />
+      </Helmet>
       <div
         style={{
           display: "flex",
@@ -65,7 +78,7 @@ function CoinToss() {
           fontFamily: "Georgia, serif",
         }}
       >
-        Coin Toss
+        Coin Toss to Decide
       </h2>
       {/* Input and Flip Section */}
       <div style={{ maxWidth: 500, margin: "0 auto", textAlign: "center" ,color:"black"}}>
