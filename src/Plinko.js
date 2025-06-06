@@ -116,6 +116,7 @@ export default function Plinko() {
         style={{
           backgroundColor: "black",
           color: "white",
+          fontWeight: "Bold",
           padding: "12px 20px",
           borderRadius: 8,
           marginBottom: 20,
@@ -126,6 +127,7 @@ export default function Plinko() {
       >
         {/* React Helmet for SEO */}
       <Helmet>
+        <title> Plinko - Decision It </title>
         <meta
           name="Plinko to Decide"
           content="Play plinko to decide which option to choose. Input your options and the plinko game will decide for you!"
@@ -137,7 +139,7 @@ export default function Plinko() {
           content="Use Spin the Wheel to decide between options with a fun and interactive spinner."
         />
       </Helmet>
-      
+
         <h1 style={{ margin: 0, fontFamily: "chewy" }}>Decision It</h1>
         <button
           onClick={() => navigate("/")}

@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function Home() {
   const navigate = useNavigate();
@@ -26,6 +27,14 @@ function Home() {
         fontFamily: "Chewy",
       }}
     >
+      <Helmet>
+        <title>Decision It </title>
+        <meta
+          name="Decision It"
+          content="Decision It helps you make decisions using fun tools like spinners, Plinko, coin flips, and more. Enter your options and let fate decide!"
+        />
+      </Helmet>
+
       {/* Title Bar */}
       <div
         style={{

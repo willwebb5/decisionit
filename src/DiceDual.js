@@ -90,6 +90,7 @@ const DiceDual = () => {
     >
       {/* React Helmet for SEO */}
       <Helmet>
+        <title> Dice Dual - Decision It </title>
         <meta
           name="Dice Dual"
           content="Dice Dual to decide between options or to select names! This fun game helps people decide between options by rolling dice! The highest roll wins!"

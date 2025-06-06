@@ -164,6 +164,7 @@ function RunnerRace() {
     >
       {/* React Helmet for SEO */}
             <Helmet>
+              <title> Horse Race - Decision It</title>
               <meta
                 name="Horse Race to Decide"
                 content="This horse race helps you decide between options! Input your options and watch the horses decide for you."

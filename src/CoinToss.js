@@ -25,6 +25,7 @@ function CoinToss() {
     >
       {/* React Helmet for SEO */}
       <Helmet>
+        <title> Coin Toss - Decision It </title>
         <meta
           name="Coin Toss to Decide"
           content="Can't decide between two options? Flip a coin and its out of your hands! This coin toss will help you decide quickly and for fun!"

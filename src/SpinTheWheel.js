@@ -73,6 +73,7 @@ function SpinTheWheel() {
     >
       {/* React Helmet for SEO */}
       <Helmet>
+        <title> Spin the Wheel - Decision It </title>
         <meta
           name="Spin the Wheel"
           content="Spin the Wheel is a fun decision maker that has a spinner of options. Users input options and the weel decides for you!"
