@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { Wheel } from "react-custom-roulette";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import FAQ from "./FAQ";
 
 function SpinTheWheel() {
   const [inputs, setInputs] = useState(["", "", ""]);
@@ -370,6 +371,7 @@ function SpinTheWheel() {
           </div>
         </div>
       )}
+      <FAQ/>
     </div>
   );
 }

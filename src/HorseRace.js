@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import FAQ from "./FAQ";
 
 function RunnerRace() {
   const [runners, setRunners] = useState(["Runner 1", "Runner 2", "Runner 3"]);
@@ -444,6 +445,7 @@ function RunnerRace() {
           </button>
         </div>
       </div>
+      <FAQ/>
     </div>
   );
 }

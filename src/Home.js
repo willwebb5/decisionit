@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import FAQ from "./FAQ";
+
 
 function Home() {
   const navigate = useNavigate();
@@ -260,6 +262,7 @@ function Home() {
   />
 </div>
       </div>
+      <FAQ />
     </div>
   );
 }

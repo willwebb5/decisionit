@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import FAQ from "./FAQ";
 
 function CoinToss() {
   const [headsOption, setHeadsOption] = useState("");
@@ -164,6 +165,7 @@ function CoinToss() {
           Each side has a 50% chance.
         </p>
       </div>
+      <FAQ />
     </div>
   );
 }

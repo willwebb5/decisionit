@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import confetti from "canvas-confetti";
 import { Helmet } from "react-helmet";
+import FAQ from "./FAQ";
 
 export default function Plinko() {
   const navigate = useNavigate();
@@ -444,6 +445,7 @@ export default function Plinko() {
           </p>
         </div>
       </div>
+      <FAQ/>
     </div>
   );
 }
