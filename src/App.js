@@ -1,9 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'; // switched from BrowserRouter to HashRouter
 import Home from './Home';
 import SpinTheWheel from './SpinTheWheel';
-import DiceDual from './DiceDual'; // ✅ Import DiceDual
-import CoinToss from './CoinToss';  // Import your coin flip component
+import DiceDual from './DiceDual';
+import CoinToss from './CoinToss';
 import HorseRace from './HorseRace';
 import Plinko from './Plinko';
 import { SpeedInsights } from "@vercel/speed-insights/react";

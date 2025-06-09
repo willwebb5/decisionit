@@ -250,7 +250,7 @@ function Home() {
 >
   <h3 style={{ marginBottom: 10 }}>🔴 Plinko</h3>
   <img
-    src={process.env.PUBLIC_URL + "/PlinkoImage.png"} // Add an image named PlinkoImage.png to your public folder
+    src={plinkoimage} // Add an image named PlinkoImage.png to your public folder
     alt="Plinko Game"
     style={{
       width: "100%",
