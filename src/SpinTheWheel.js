@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Wheel } from "react-custom-roulette";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import FAQ from "./FAQ";
 
 function SpinTheWheel() {
