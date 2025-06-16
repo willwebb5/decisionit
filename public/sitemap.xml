@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://decisionitapp.com/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://decisionitapp.com/SpinTheWheel</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://decisionitapp.com/dicedual</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://decisionitapp.com/cointoss</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://decisionitapp.com/horserace</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://decisionitapp.com/plinko</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://decisionitapp.com/sitemap.xml</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.1</priority>
+  </url>
+
+  <url>
+    <loc>https://decisionitapp.com/robots.txt</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.1</priority>
+  </url>
+
+</urlset>
