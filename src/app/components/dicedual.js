@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation';
 import FAQ from "./FAQ";
+import Image from 'next/image';
 
 const DiceDual = () => {
   const router = useRouter()
@@ -196,9 +197,11 @@ const DiceDual = () => {
               }}
             >
               {diceRolls.length === options.length ? (
-                <img
+                <Image
                   src={diceImages[diceRolls[idx] - 1]}
                   alt={`Die face ${diceRolls[idx]}`}
+                  width={150}
+                  height={116}
                   style={{
                     width: "100%",
                     height: "100%",
