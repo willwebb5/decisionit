@@ -188,7 +188,7 @@ export default function Plinko() {
               />
             </label>
             <button
-              onClick={() => handleDrop()}
+              onClick={() => handleDrop(parseInt(startCol, 10))}
               disabled={isDropping}
               style={{
                 marginLeft: 10,
@@ -308,8 +308,8 @@ export default function Plinko() {
               <h3 style={{ marginTop: 0, marginBottom: 10, color:"#7a99d9" }}>How to Play</h3>
               <p>
                 Enter the column number where you want the ball to drop (between 1 and {options.length}).<br />
-                Click "Drop Ball" to start the ball dropping through the Plinko board.<br />
-                You can also click "Random Drop" to drop the ball from a random column.<br />
+                Click Drop Ball to start the ball dropping through the Plinko board.<br />
+                You can also click Random Drop to drop the ball from a random column.<br />
                 Watch the ball bounce through the pegs until it lands in a bucket.<br />
                 The bucket where the ball lands shows the winning option!<br />
                 You can add, edit, or remove options on the right side.<br />

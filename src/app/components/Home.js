@@ -108,7 +108,7 @@ function Home() {
           color: "black"
         }}
       >
-        <span style={{ fontSize: 18 }}>Can't decide?</span>
+        <span style={{ fontSize: 18 }}>Can&apos;t decide?</span>
         <button
           onClick={goToRandomGame}
           style={{

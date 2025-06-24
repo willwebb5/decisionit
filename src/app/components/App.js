@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import SpinTheWheel from './spinthewheel';
 import DiceDual from './dicedual';
-import CoinToss from './CoinToss';
+import CoinToss from './cointoss';
 import HorseRace from './horserace';
 import Plinko from './plinko';
 import { SpeedInsights } from "@vercel/speed-insights/react";

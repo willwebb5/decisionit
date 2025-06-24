@@ -141,7 +141,7 @@ function CoinToss() {
         <h3 style={{ color: "#7a99d9", marginBottom: 10 }}>How to Play</h3>
         <p>
           1. Enter options in the fields provided.<br />
-          2. Click "Flip Coin".<br />
+          2. Click Flip Coin.<br />
           3. Winner is shown below<br />
           4. Odds are 50/50.
         </p>

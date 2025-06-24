@@ -281,9 +281,9 @@ const DiceDual = () => {
         <h3 style={{ color: "#7a99d9", marginBottom: 10 }}>How to Play</h3>
         <p>
           1. Enter options in the fields provided.<br />
-          2. Click "Roll Dice" to assign a random dice roll to each.<br />
+          2. Click Roll Dice to assign a random dice roll to each.<br />
           3. The highest roll wins!<br />
-          4. If there's a tie, only the tied options remain and you can roll again.
+          4. If there is a tie, only the tied options remain and you can roll again.
         </p>
       </div>
 

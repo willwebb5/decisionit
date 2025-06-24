@@ -285,7 +285,7 @@ function SpinTheWheel() {
             <p>
               1. Enter options in the fields provided.
               <br />
-              2. Click "Spin" to spin the wheel.
+              2. Click Spin to spin the wheel.
               <br />
               3. Whichever option it lands on either wins or is removed!
               <br />
